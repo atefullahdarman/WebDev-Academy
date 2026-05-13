@@ -1,0 +1,512 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    background:white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 16px 0;
+    border-radius: 8px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 28px;
+    font-weight: 800;
+    text-decoration: none;
+    color: #0f172a;
+}
+
+.logo span {
+    color: #f59120;
+}
+
+.logo i {
+    color: #f59120;
+    margin-right: 8px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #334155;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,.nav-links a.active {
+    color: #f59120;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #0f172a;
+}
+
+/* ==================== HERO ==================== */
+.hero {
+    background: linear-gradient(135deg, #90ea66 0%, #4b95a2 100%);
+    padding: 100px 0;
+    color:black;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero-content .highlight {
+   color: #f59120;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 32px;
+    opacity: 0.95;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: white;
+   color: #f59120;
+}
+
+.btn-primary:hover {
+    background: #f1f5f9;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #f59120;
+}
+
+/* ==================== SECTIONS HEADER ==================== */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.section-header .highlight {
+    color: #f59120;
+}
+
+.section-header p {
+    color:black;
+    font-size: 18px;
+}
+
+/* ==================== FEATURES ==================== */
+.features {
+    padding: 80px 0;
+    background: white;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 32px 24px;
+    background: #f8fafc;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    font-size: 48px;
+   color: #f59120;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #64748b;
+}
+
+/* ==================== COURSES ==================== */
+.courses {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+}
+
+.course-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+}
+
+.course-img {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 40px;
+    text-align: center;
+}
+
+.course-img i {
+    font-size: 64px;
+    color: white;
+}
+
+.course-info {
+    padding: 24px;
+}
+
+.course-info h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.course-info p {
+    color: #64748b;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.course-meta span i {
+    margin-right: 6px;
+    color: #f59120;
+}
+
+.course-btn {
+    display: inline-block;
+    color: #f59120;
+    background: rgb(197, 193, 193);
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    width: 100%;
+    text-align: center;
+}
+
+.course-btn:hover {
+    background:#f59120 ;
+    color: black;
+    transform: scale(1.02);
+}
+
+/* ==================== TESTIMONIALS ==================== */
+.testimonials {
+    padding: 80px 0;
+    background: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.testimonial-card {
+    background: #f8fafc;
+    padding: 32px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+}
+
+.testimonial-card i {
+    font-size: 48px;
+    color: #f59120;
+    margin-bottom: 20px;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #334155;
+}
+
+.testimonial-card h4 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.testimonial-card span {
+    font-size: 14px;
+   color: #f59120;
+}
+
+/* ==================== ABOUT ==================== */
+.about {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 30px;
+    box-shadow: 0 20px 30px -10px rgba(0,0,0,0.2);
+}
+
+.about-text h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.about-text .highlight {
+   color: #f59120;
+}
+
+.about-text h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #334155;
+}
+
+.about-text p {
+    margin-bottom: 16px;
+    color: #475569;
+}
+
+.about-social {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    
+}
+
+.about-social a {
+    width: 45px;
+    height: 45px;
+    background: #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f59120;
+    font-size: 20px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.about-social a:hover {
+   color: #f59120;
+    color: white;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background: #0f172a;
+    color: white;
+    padding: 48px 0 24px;
+    border-radius: 8px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.footer-logo h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.footer-logo i {
+    color: #f59120;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #f59120;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+    color: #cbd5e1;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: #f59120;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid #334155;
+    color: #94a3b8;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    
+    .hero-content p {
+        font-size: 16px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .about-social {
+        justify-content: center;
+    }
+    
+    .section-header h2 {
+        font-size: 28px;
+    }
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    gap: 16px;
+}
+
+
+
