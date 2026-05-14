@@ -17,8 +17,8 @@ const courses = [
         description: "Master JavaScript with ES6+, DOM manipulation, APIs, and projects.",
         icon: "fab fa-js",
         lessons: 60,
-        duration: "12 hours",
-        url: "https://youtube.com/playlist?list=PL4cUxeGkcC9haFPT7J25Q6GRB1jpDPWhX",
+        duration: "7 hours",
+        url: "https://youtu.be/PkZNo7MFNFg",
         color: "#f7df1e"
     },
     {
@@ -47,8 +47,8 @@ const courses = [
         description: "Learn SQL, database design, joins, subqueries, and optimization.",
         icon: "fas fa-database",
         lessons: 35,
-        duration: "7 hours",
-        url: "https://youtube.com/playlist?list=PL4cUxeGkcC9gB9dB7t8R7s8c7s8c7s8c7",
+        duration: "4.5 hours",
+        url: "https://youtu.be/9ylj9NR0Lcg",
         color: "#4479a1"
     },
     {

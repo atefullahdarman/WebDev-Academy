@@ -1,0 +1,404 @@
+
+/* ==================== HEADER ==================== */
+.roadmap-header {
+    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+    background-image: url(../images/MYXJ_20260514090458428_save.jpg);
+    background-size: cover;
+    padding: 80px 0;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.roadmap-header h1 {
+    font-size: 52px;
+    margin-bottom: 16px;
+}
+
+.roadmap-header .highlight {
+   color: #f59120;
+}
+
+.roadmap-header p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.header-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.stat {
+    background: rgba(255,255,255,0.2);
+    padding: 10px 25px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat i {
+    font-size: 18px;
+}
+
+/* ==================== TIMELINE ==================== */
+.roadmap-section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.section-title .highlight {
+    color: #f59120;
+}
+
+.section-title p {
+    color: #64748b;
+    font-size: 18px;
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom,  #f59120, #a855f7);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50%;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 50%;
+}
+
+.timeline-badge {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-item:nth-child(even) .timeline-badge {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+}
+
+.badge-number {
+    width: 50px;
+    height: 50px;
+    background: #f59120;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 1;
+    box-shadow: 0 0 0 4px white;
+}
+
+.badge-line {
+    width: 2px;
+    height: 80px;
+    background:#f59120;
+    margin-top: 10px;
+}
+
+.timeline-content {
+    background:linear-gradient(#f59120,gray);
+    
+    border-radius: 20px;
+    padding: 25px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.stage-icon {
+    width: 60px;
+    height: 60px;
+    background: #f59120;;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.stage-icon i {
+    font-size: 30px;
+    color: white;
+}
+
+.timeline-content h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.stage-duration {
+    color:#f59120;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.skill-tag {
+    background: #f1f5f9;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #475569;
+}
+
+.project-hint {
+    background: #fef3c7;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #d97706;
+    margin-bottom: 15px;
+}
+
+.project-hint i {
+    margin-right: 8px;
+}
+
+.stage-btn {
+    display: inline-block;
+    background:#f59120;;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.stage-btn:hover {
+    background:black;
+    color:white;
+}
+
+/* ==================== STATS SECTION ==================== */
+.stats-section {
+    padding: 60px 0;
+    background: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-card {
+    padding: 30px;
+}
+
+.stat-circle {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #f59120, #926736);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.stat-circle i {
+    font-size: 35px;
+    color: white;
+}
+
+.stat-card h3 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.stat-card p {
+    color: #64748b;
+}
+
+/* ==================== RESOURCES ==================== */
+.resources-section {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.resource-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+}
+
+.resource-card i {
+    font-size: 50px;
+    color: #f59120;;
+    margin-bottom: 20px;
+}
+
+.resource-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.resource-card p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.resource-card a {
+    color:#f59120;;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.resource-card a:hover{
+    color: #0f172a;
+}
+
+/* ==================== BACK TO TOP ==================== */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #f59120;;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    z-index: 100;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .roadmap-header h1 {
+        font-size: 32px;
+    }
+    
+    .header-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        padding-left: 70px;
+        padding-right: 0;
+        justify-content: flex-start;
+    }
+    
+    .timeline-badge,
+    .timeline-item:nth-child(even) .timeline-badge {
+        left: 30px;
+        right: auto;
+        transform: translateX(0);
+    }
+    
+    .timeline-content {
+        width: 100%;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .newsletter form {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+}
+

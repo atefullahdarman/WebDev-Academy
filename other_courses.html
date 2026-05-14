@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+  <link rel="shortcut icon" href="./images/1.png"type="image/x-icon">
+  <meta name="description" content="WebDev Academy | Professional Web Development Courses ">
+  <meta name="author" content="Atefullah">
+  <meta name="keywords" content="html5,online,CSS,JavaScript,MongoDB,MySQL,React,tilwind,Node">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+    <title>WebDev Academy | Professional Web Development Courses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #333;
+            background: none;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                border-bottom: 1px solid #eee;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 15px 20px;
+            }
+        }
+
+        .header {
+            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+            background-image: url(./images/MYXJ_20260514090458428_save.jpg);
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+            border-radius: 8px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .header .highlight {
+            color: #f59120;
+        }
+
+        .header p {
+            font-size: 18px;
+        }
+
+        .filters-section {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+
+        }
+
+        .filters-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            background: #e2e8f0;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .filter-btn:hover {
+            background: #f59120;
+            color: white;
+        }
+
+        .search-box {
+            text-align: center;
+        }
+
+        .search-box input {
+            padding: 12px 20px;
+            width: 300px;
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: #f59120;
+        }
+
+        .courses-section {
+            padding: 40px 0;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-img {
+            background: linear-gradient(135deg, #f59120, #926736);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .course-img i {
+            font-size: 50px;
+            color: white;
+        }
+
+        .course-info {
+            padding: 20px;
+        }
+
+        .course-title {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .course-meta i {
+            margin-right: 5px;
+        }
+
+        .course-btn {
+            display: block;
+            background: #f59120;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .course-btn:hover {
+            background: #f59120;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .header p {
+                font-size: 16px;
+            }
+
+            .filters-wrapper {
+                gap: 10px;
+            }
+
+            .filter-btn {
+                padding: 8px 18px;
+                font-size: 12px;
+            }
+
+            .search-box input {
+                width: 90%;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">
+            <a href="#"><i class="fas fa-code"></i> WebDev<span>Academy</span></a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="coueses.html">Courses</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="other_courses.html">Other_Courses</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ==================== HEADER ==================== -->
+<section class="header">
+    <div class="container">
+        <h1>Web Development <span class="highlight">Courses</span></h1>
+        <p>30+ complete courses to become a full-stack developer</p>
+    </div>
+</section>
+
+<!-- ==================== فلټر برخه ==================== -->
+<section class="filters-section">
+    <div class="container">
+        <div class="filters-wrapper">
+            <button class="filter-btn" onclick="filterCourses('all')" style="background: #f59120; color: white;">All</button>
+            <button class="filter-btn" onclick="filterCourses('html')">HTML/CSS</button>
+            <button class="filter-btn" onclick="filterCourses('javascript')">JavaScript</button>
+            <button class="filter-btn" onclick="filterCourses('react')">React</button>
+            <button class="filter-btn" onclick="filterCourses('node')">Node.js</button>
+            <button class="filter-btn" onclick="filterCourses('database')">Database</button>
+            <button class="filter-btn" onclick="filterCourses('typescript')">TypeScript</button>
+            <button class="filter-btn" onclick="filterCourses('nextjs')">Next.js</button>
+            <button class="filter-btn" onclick="filterCourses('tailwind')">Tailwind</button>
+            <button class="filter-btn" onclick="filterCourses('docker')">Docker</button>
+            <button class="filter-btn" onclick="filterCourses('fullstack')">Full Stack</button>
+        </div>
+        <div class="search-box">
+            <input type="text" id="searchInput" onkeyup="searchCourses()" placeholder="Search courses...">
+        </div>
+    </div>
+</section>
+
+<section class="courses-section">
+    <div class="container">
+        <div id="coursesGrid" class="courses-grid"></div>
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3><i class="fas fa-code"></i> WebDevAcademy</h3>
+                <p>Best place for Web Development</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i>atefullahdarman@gmail.com</p>
+                <p><i class="fas fa-phone"></i>0731597286</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 WebDevAcademy. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    }
+    const courses = [
+        { id: 1, title: "HTML & CSS Full Course", duration: "11 hours", level: "Beginner", category: "html", url: "https://youtu.be/mU6anWqZJcc" },
+        { id: 2, title: "HTML and CSS Tutorial", duration: "2 hours", level: "Beginner", category: "html", url: "https://youtu.be/8gNrZ4lAnAw" },
+        { id: 3, title: "CSS Full Course", duration: "4.5 hours", level: "Beginner", category: "html", url: "https://youtu.be/1PnVor36_40" },
+        { id: 4, title: "Flexbox and Grid Course", duration: "1.5 hours", level: "Beginner", category: "html", url: "https://youtu.be/3YW65K6LcIA" },
+        { id: 5, title: "JavaScript Full Course", duration: "7 hours", level: "Beginner", category: "javascript", url: "https://youtu.be/PkZNo7MFNFg" },
+        { id: 6, title: "JavaScript Tutorial", duration: "8.5 hours", level: "Beginner", category: "javascript", url: "https://youtu.be/EfAl9bwzVZk" },
+        { id: 7, title: "JavaScript ES6+ Course", duration: "4 hours", level: "Intermediate", category: "javascript", url: "https://youtu.be/NCwa_xi0Uuc" },
+        { id: 8, title: "Async JavaScript Course", duration: "3 hours", level: "Intermediate", category: "javascript", url: "https://youtu.be/ZYb_V5N2D7g" },
+        { id: 9, title: "React JS Full Course", duration: "8 hours", level: "Intermediate", category: "react", url: "https://youtu.be/bMknfKXIFA8" },
+        { id: 10, title: "React Tutorial", duration: "3 hours", level: "Beginner", category: "react", url: "https://youtu.be/Ke90Tje7VS0" },
+        { id: 11, title: "React Full Course 2025", duration: "10 hours", level: "Advanced", category: "react", url: "https://youtu.be/RVFAyFWO4go" },
+        { id: 12, title: "React Redux Course", duration: "4 hours", level: "Intermediate", category: "react", url: "https://youtu.be/iBUJVy8phqw" },
+        { id: 13, title: "Node.js and Express Course", duration: "3 hours", level: "Intermediate", category: "node", url: "https://youtu.be/Oe421EPjeBE" },
+        { id: 14, title: "Node.js Full Course", duration: "5 hours", level: "Intermediate", category: "node", url: "https://youtu.be/RLtyhwFtXQA" },
+        { id: 15, title: "Express.js Course", duration: "3 hours", level: "Intermediate", category: "node", url: "https://youtu.be/qWFxY4l5BxQ" },
+        { id: 16, title: "REST API with Node.js", duration: "5 hours", level: "Advanced", category: "node", url: "https://youtu.be/pKd0Rpw7O48" },
+        { id: 17, title: "MySQL Full Course", duration: "4.5 hours", level: "Beginner", category: "database", url: "https://youtu.be/9ylj9NR0Lcg" },
+        { id: 18, title: "MySQL Tutorial", duration: "3 hours", level: "Beginner", category: "database", url: "https://youtu.be/7S_tz1z_5bA" },
+        { id: 19, title: "MongoDB Full Course", duration: "4 hours", level: "Intermediate", category: "database", url: "https://youtu.be/c2M-rlkkT5o" },
+        { id: 20, title: "PostgreSQL Course", duration: "4 hours", level: "Intermediate", category: "database", url: "https://youtu.be/qw--VYLpxG4" },
+        { id: 21, title: "TypeScript Full Course", duration: "5 hours", level: "Intermediate", category: "typescript", url: "https://youtu.be/30qLWuwR64A" },
+        { id: 22, title: "TypeScript Tutorial", duration: "2 hours", level: "Beginner", category: "typescript", url: "https://youtu.be/d56mG7DezGs" },
+        { id: 23, title: "Next.js Full Course", duration: "4 hours", level: "Intermediate", category: "nextjs", url: "https://youtu.be/9VIpL1F5Bsw" },
+        { id: 24, title: "Next.js 14 Course", duration: "3 hours", level: "Intermediate", category: "nextjs", url: "https://youtu.be/ZvZN7F9MgO4" },
+        { id: 25, title: "Tailwind CSS Course", duration: "3 hours", level: "Beginner", category: "tailwind", url: "https://youtu.be/lCxcTsOHrjo" },
+        { id: 26, title: "Tailwind Tutorial", duration: "1.5 hours", level: "Beginner", category: "tailwind", url: "https://youtu.be/TiYz7JlFXaE" },
+        { id: 27, title: "Docker Full Course", duration: "3 hours", level: "Intermediate", category: "docker", url: "https://youtu.be/fqMOX6JJhGo" },
+        { id: 28, title: "Docker Tutorial", duration: "1 hour", level: "Beginner", category: "docker", url: "https://youtu.be/pTFZFxd4hOI" },
+        { id: 29, title: "Full Stack Bootcamp", duration: "13 hours", level: "Advanced", category: "fullstack", url: "https://youtu.be/zJSY8tbf_72" },
+        { id: 30, title: "MERN Stack Course", duration: "7 hours", level: "Advanced", category: "fullstack", url: "https://youtu.be/mrHNSan4Qxc" }
+    ];
+
+    let currentFilter = "all";
+    let currentSearch = "";
+
+    function displayCourses() {
+        let filtered = courses;
+        if (currentFilter !== "all") {
+            filtered = filtered.filter(c => c.category === currentFilter);
+        }
+        if (currentSearch !== "") {
+            filtered = filtered.filter(c => c.title.toLowerCase().includes(currentSearch.toLowerCase()));
+        }
+
+        const grid = document.getElementById("coursesGrid");
+        grid.innerHTML = filtered.map(course => `
+            <div class="course-card">
+                <div class="course-img">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="course-info">
+                    <h3 class="course-title">${course.title}</h3>
+                    <div class="course-meta">
+                        <span><i class="far fa-clock"></i> ${course.duration}</span>
+                        <span><i class="fas fa-signal"></i> ${course.level}</span>
+                    </div>
+                    <a href="${course.url}" target="_blank" class="course-btn">Start Learning →</a>
+                </div>
+            </div>
+        `).join("");
+    }
+
+    function filterCourses(category) {
+        currentFilter = category;
+        displayCourses();
+        
+        const btns = document.querySelectorAll(".filter-btn");
+        btns.forEach(btn => {
+            btn.style.background = "#e2e8f0";
+            btn.style.color = "#333";
+        });
+        
+        if (event && event.target) {
+            event.target.style.background = "#6366f1";
+            event.target.style.color = "white";
+        }
+    }
+
+    function searchCourses() {
+        currentSearch = document.getElementById("searchInput").value;
+        displayCourses();
+    }
+
+    displayCourses();
+</script>
+
+</body>
+</html>

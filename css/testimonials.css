@@ -1,7 +1,9 @@
 
 /* ==================== HEADER ==================== */
 .testimonials-header {
-    background: linear-gradient(135deg, #90ea66 0%, #4b95a2 100%);
+    /* background: linear-gradient(135deg, #90ea66 0%, #4b95a2 100%); */
+    background-image: url(../images/MYXJ_20260514090458428_save.jpg);
+    background-size: cover;
     padding: 80px 0;
     color: white;
     text-align: center;
@@ -71,9 +73,6 @@
     padding: 30px 0;
     background: white;
     border-bottom: 1px solid #e2e8f0;
-    position: sticky;
-    top: 70px;
-    z-index: 99;
 }
 
 .filters-wrapper {
@@ -290,6 +289,8 @@
 .add-testimonial-section {
     padding: 60px 0;
     background: linear-gradient(135deg, #90ea66 0%, #4b95a2 100%);
+    /* background-image: url(../images/MYXJ_20260514090458428_save.jpg); */
+    background-size: cover;
     border-radius: 8px;
 }
 
@@ -298,7 +299,7 @@
     background: white;
     padding: 50px;
     border-radius: 30px;
-    max-width: 600px;
+    max-width: 550px;
     margin: 0 auto;
 }
 
@@ -314,13 +315,13 @@
 }
 
 .add-testimonial-card p {
-    color: #64748b;
+    color: #f59120;
     margin-bottom: 25px;
 }
 
 .btn-primary {
     color: #f59120;
-    color: white;
+    /* color: white; */
     border: none;
     padding: 14px 32px;
     border-radius: 50px;
@@ -337,12 +338,13 @@
 
 /* ==================== MODAL FORM ==================== */
 .modal {
-    position: fixed;
+    position:static;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
+    height: auto;
+    /* height: 100%; */
+    /* background: rgba(0,0,0,0.8); */
     z-index: 2000;
     justify-content: center;
     align-items: center;
@@ -352,7 +354,7 @@
     background: white;
     max-width: 550px;
     width: 90%;
-    border-radius: 24px;
+    border-radius: 30px;
     animation: slideIn 0.3s ease;
 }
 
@@ -455,19 +457,27 @@
 
 .form-buttons {
     display: flex;
-    gap: 15px;
-    margin-top: 25px;
+    gap: 12px;
+    margin-top: 20px;
+    width: 100%;
 }
 
 .btn-submit {
-    color: #f59120;
-    color: white;
+     color: #f59120;
+    background: rgb(197, 193, 193);
+    /* color: white; */
     border: none;
     padding: 12px 25px;
     border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
     flex: 1;
+}
+.btn-submit:hover{
+    background:#f59120 ;
+    color: black;
+    transform: scale(1.02);
+
 }
 
 .btn-cancel {
@@ -478,6 +488,12 @@
     border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
+}
+
+.btn-cancel:hover{
+    transform: scale(1.02);
+    background: rgb(221, 70, 70);
+    color: black;
 }
 
 /* ==================== NEWSLETTER ==================== */
@@ -525,8 +541,7 @@
 }
 
 .newsletter button {
-    color: #f59120;
-    color: white;
+    color: black;
     border: none;
     padding: 14px 28px;
     border-radius: 50px;

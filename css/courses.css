@@ -1,7 +1,9 @@
 
 /* ==================== COURSES HEADER ==================== */
 .courses-header {
-    background: linear-gradient(135deg, #90ea66 0%, #4b95a2 100%);
+    /* background: linear-gradient(135deg, #90ea66 0%, #4b95a2 100%); */
+    background-image: url(../images/MYXJ_20260514090458428_save.jpg);
+    background-size:cover;
     padding: 60px 0;
     color: white;
     text-align: center;
@@ -36,9 +38,6 @@
     padding: 40px 0;
     background: white;
     border-bottom: 1px solid #e2e8f0;
-    position: sticky;
-    top: 70px;
-    z-index: 99;
 }
 
 .filters-wrapper {
@@ -103,7 +102,7 @@
 .filter-btn:hover,
 .filter-btn.active {
      color: #f59120;
-    color: white;
+    /* color: white; */
 }
 
 /* ==================== COURSES GRID ==================== */

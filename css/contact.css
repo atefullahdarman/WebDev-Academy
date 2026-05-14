@@ -1,7 +1,10 @@
 
 /* ==================== PAGE HEADER ==================== */
 .page-header {
-    background: linear-gradient(135deg, #90ea66 0%, #4b95a2 100%);
+    /* background: linear-gradient(135deg, #90ea66 0%, #4b95a2 100%); */
+    background-image: url(../images/MYXJ_20260514090458428_save.jpg);
+    background-size: cover;
+
     padding: 80px 0;
     color: white;
     text-align: center;
