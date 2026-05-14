@@ -1,19 +1,13 @@
-// ==================== رودمپ پاڼې بشپړ جاوااسکریپټ ====================
-// پدې کې همبرګر مینو، انیمیشنونه، او د رودمپ ټول فیچرونه شامل دي
-
+// ==================== همبرګر مینو ====================
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // ==================== 1. همبرګر مینو ====================
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     
     if (menuToggle && navLinks) {
-        // د مینو پرانیستل او تړل
         menuToggle.addEventListener('click', function(event) {
             event.stopPropagation();
             navLinks.classList.toggle('active');
             
-            // د آیکون بدلون (bars -> times)
             const icon = menuToggle.querySelector('i');
             if (icon) {
                 if (navLinks.classList.contains('active')) {
@@ -26,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // کله چې په لینک کلیک وشي، مینو وتړل شي
         const allLinks = navLinks.querySelectorAll('a');
         allLinks.forEach(function(link) {
             link.addEventListener('click', function() {
@@ -40,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // کله چې د مینو بهر کلیک وشي، مینو وتړل شي
     document.addEventListener('click', function(event) {
         const navLinks = document.querySelector('.nav-links');
         const menuToggle = document.querySelector('.menu-toggle');
@@ -57,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // کله چې سکرین اندازه بدله شي او مینو خلاص وي
     window.addEventListener('resize', function() {
         const navLinks = document.querySelector('.nav-links');
         const menuToggle = document.querySelector('.menu-toggle');
@@ -73,8 +64,117 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+});
+
+// ==================== د تړلو وړتیا (Completion) او پروګریس ====================
+document.addEventListener('DOMContentLoaded', function() {
+    // د بشپړ شویو مرحلو ډیټا
+    let completedStages = {
+        frontend: false,
+        javascript: false,
+        react: false,
+        backend: false,
+        database: false,
+        devops: false
+    };
     
-    // ==================== 2. د رودمپ کارتونو انیمیشن ====================
+    // د localStorage څخه لوډ کول
+    const savedProgress = localStorage.getItem('roadmapProgress');
+    if (savedProgress) {
+        completedStages = JSON.parse(savedProgress);
+    }
+    
+    // د مرحلو سټایل تازه کول
+    function updateStages() {
+        const stageValues = {
+            frontend: 0,
+            javascript: 0,
+            react: 0,
+            backend: 0,
+            database: 0,
+            devops: 0
+        };
+        
+        let totalCompleted = 0;
+        let totalStages = Object.keys(completedStages).length;
+        
+        for (const [stage, completed] of Object.entries(completedStages)) {
+            const element = document.querySelector(`.timeline-item[data-stage="${stage}"]`);
+            const btn = element ? element.querySelector('.complete-btn') : null;
+            
+            if (completed) {
+                if (element) element.classList.add('completed');
+                if (btn) {
+                    btn.classList.add('completed');
+                    btn.innerHTML = '✓ Completed';
+                }
+                totalCompleted++;
+                stageValues[stage] = 100;
+            } else {
+                if (element) element.classList.remove('completed');
+                if (btn) {
+                    btn.classList.remove('completed');
+                    btn.innerHTML = '✓ Mark Complete';
+                }
+                stageValues[stage] = 0;
+            }
+        }
+        
+        // د پروګریس بارونو تازه کول
+        const totalPercent = Math.round((totalCompleted / totalStages) * 100);
+        
+        const progressFill = document.getElementById('progressFill');
+        const progressPercent = document.getElementById('progressPercent');
+        
+        if (progressFill) {
+            const circumference = 283;
+            const offset = circumference - (totalPercent / 100) * circumference;
+            progressFill.style.strokeDashoffset = offset;
+        }
+        
+        if (progressPercent) {
+            progressPercent.textContent = totalPercent;
+        }
+        
+        // انفرادي پروګریس بارونه
+        document.getElementById('frontendPercent').textContent = stageValues.frontend;
+        document.getElementById('frontendBar').style.width = stageValues.frontend + '%';
+        
+        document.getElementById('jsPercent').textContent = stageValues.javascript;
+        document.getElementById('jsBar').style.width = stageValues.javascript + '%';
+        
+        document.getElementById('reactPercent').textContent = stageValues.react;
+        document.getElementById('reactBar').style.width = stageValues.react + '%';
+        
+        document.getElementById('backendPercent').textContent = stageValues.backend;
+        document.getElementById('backendBar').style.width = stageValues.backend + '%';
+        
+        document.getElementById('dbPercent').textContent = stageValues.database;
+        document.getElementById('dbBar').style.width = stageValues.database + '%';
+    }
+    
+    // د کلیک پیښې
+    const completeBtns = document.querySelectorAll('.complete-btn');
+    completeBtns.forEach(function(btn) {
+        const stage = btn.getAttribute('data-stage');
+        if (completedStages[stage]) {
+            btn.classList.add('completed');
+            btn.innerHTML = '✓ Completed';
+        }
+        
+        btn.addEventListener('click', function() {
+            const stage = this.getAttribute('data-stage');
+            completedStages[stage] = !completedStages[stage];
+            localStorage.setItem('roadmapProgress', JSON.stringify(completedStages));
+            updateStages();
+        });
+    });
+    
+    updateStages();
+});
+
+// ==================== د کارتونو انیمیشن ====================
+document.addEventListener('DOMContentLoaded', function() {
     const timelineItems = document.querySelectorAll('.timeline-item');
     
     function checkScroll() {
@@ -83,33 +183,45 @@ document.addEventListener('DOMContentLoaded', function() {
             const windowHeight = window.innerHeight;
             
             if (itemTop < windowHeight - 100) {
-                item.classList.add('visible');
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
             }
         });
     }
     
+    timelineItems.forEach(function(item) {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(30px)';
+        item.style.transition = 'all 0.6s ease';
+    });
+    
     window.addEventListener('scroll', checkScroll);
     checkScroll();
-    
-    // ==================== 3. د شمېرونکو انیمیشن ====================
+});
+
+// ==================== د شمېرونکو انیمیشن ====================
+document.addEventListener('DOMContentLoaded', function() {
     const counters = document.querySelectorAll('.counter');
     let countersStarted = false;
+    
+    function animateCounter(counter, target) {
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(function() {
+            current += increment;
+            if (current >= target) {
+                counter.innerText = Math.floor(target);
+                clearInterval(timer);
+            } else {
+                counter.innerText = Math.floor(current);
+            }
+        }, 20);
+    }
     
     function startCounters() {
         counters.forEach(function(counter) {
             const target = parseInt(counter.getAttribute('data-target'));
-            let current = 0;
-            const increment = target / 50;
-            
-            const timer = setInterval(function() {
-                current += increment;
-                if (current >= target) {
-                    counter.innerText = target;
-                    clearInterval(timer);
-                } else {
-                    counter.innerText = Math.floor(current);
-                }
-            }, 20);
+            animateCounter(counter, target);
         });
     }
     
@@ -126,37 +238,29 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', checkCounters);
     checkCounters();
+});
+
+// ==================== بک ته ټاپ ====================
+document.addEventListener('DOMContentLoaded', function() {
+    const backBtn = document.getElementById('backToTop');
     
-    // ==================== 4. بک ته ټاپ تڼۍ ====================
-    const backToTop = document.getElementById('backToTop');
-    
-    if (backToTop) {
+    if (backBtn) {
         window.addEventListener('scroll', function() {
             if (window.scrollY > 300) {
-                backToTop.style.display = 'flex';
+                backBtn.style.display = 'flex';
             } else {
-                backToTop.style.display = 'none';
+                backBtn.style.display = 'none';
             }
         });
         
-        backToTop.addEventListener('click', function() {
+        backBtn.addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
-    
-    // ==================== 5. د FAQ ټوګل ====================
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(function(item) {
-        const question = item.querySelector('.faq-question');
-        if (question) {
-            question.addEventListener('click', function() {
-                item.classList.toggle('active');
-            });
-        }
-    });
-    
-    // ==================== 6. نیوزلیټر فورمه ====================
+});
+
+// ==================== نیوزلیټر ====================
+document.addEventListener('DOMContentLoaded', function() {
     const newsletterForm = document.getElementById('newsletterForm');
     
     if (newsletterForm) {
@@ -173,37 +277,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    // ==================== 7. د فلټر تڼۍ ====================
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    
-    filterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            const category = this.getAttribute('data-category');
-            
-            filterBtns.forEach(function(b) {
-                b.style.background = '#e2e8f0';
-                b.style.color = '#333';
-            });
-            
-            this.style.background = '#6366f1';
-            this.style.color = 'white';
-            
-            // دلته خپل فلټر منطق اضافه کړئ
-            console.log('Filter by: ' + category);
-        });
-    });
-    
-    // ==================== 8. د لټون فعالیت ====================
-    const searchInput = document.getElementById('searchInput');
-    
-    if (searchInput) {
-        searchInput.addEventListener('keyup', function() {
-            const searchTerm = this.value.toLowerCase();
-            console.log('Searching for: ' + searchTerm);
-            // دلته خپل لټون منطق اضافه کړئ
-        });
-    }
-    
-    console.log('Roadmap page loaded successfully! 🎯');
 });
+
+console.log('Roadmap page loaded successfully! 🎯');

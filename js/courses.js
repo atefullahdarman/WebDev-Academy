@@ -28,7 +28,7 @@ const coursesData = [
         reviews: 2100,
         price: 0,
         originalPrice: 59,
-        url: "https://youtu.be/PkZNo7MFNFg"
+        url: "https://youtube.com/playlist?list=PLZPZq0r_RZOO1zkgO4bIdfuLpizCeHYKv&si=KSPWTZivV6Ixo3aq"
     },
     {
         id: 3,
@@ -88,7 +88,7 @@ const coursesData = [
         reviews: 620,
         price: 0,
         originalPrice: 44,
-        url: "https://youtu.be/9ylj9NR0Lcg"
+        url: "https://youtube.com/playlist?list=PLjVLYmrlmjGeyCPgdHL2vWmEGKxcpsC0E&si=MyPHHu7V2CV7ojfw"
     },
     {
         id: 7,
@@ -148,7 +148,7 @@ const coursesData = [
         reviews: 430,
         price: 0,
         originalPrice: 49,
-        url: "https://youtu.be/30qLWuwR64A"
+        url: "https://youtube.com/playlist?list=PL1BztTYDF-QNrddrcvejiw5vxSZSPIRfn&si=A6VoJw26mDrL8Ijq"
     },
     {
         id: 11,
@@ -163,7 +163,7 @@ const coursesData = [
         reviews: 320,
         price: 0,
         originalPrice: 59,
-        url: "https://www.apollographql.com/tutorials/intro-typescript"
+        url: "https://youtu.be/ed8SzALpx1Q"
     },
     {
         id: 12,

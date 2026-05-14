@@ -18,7 +18,7 @@ const courses = [
         icon: "fab fa-js",
         lessons: 60,
         duration: "7 hours",
-        url: "https://youtu.be/PkZNo7MFNFg",
+        url: "https://youtube.com/playlist?list=PLZPZq0r_RZOO1zkgO4bIdfuLpizCeHYKv&si=KSPWTZivV6Ixo3aq",
         color: "#f7df1e"
     },
     {
@@ -48,7 +48,7 @@ const courses = [
         icon: "fas fa-database",
         lessons: 35,
         duration: "4.5 hours",
-        url: "https://youtu.be/9ylj9NR0Lcg",
+        url: "https://youtube.com/playlist?list=PLjVLYmrlmjGeyCPgdHL2vWmEGKxcpsC0E&si=MyPHHu7V2CV7ojfw",
         color: "#4479a1"
     },
     {
