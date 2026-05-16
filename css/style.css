@@ -99,8 +99,8 @@ section{
 }
 
 .logo a{
-    font-size:30px;
-    font-weight:900;
+    font-size:25px;
+    font-weight:550;
     text-decoration:none;
     color:var(--text-white);
     letter-spacing:1px;
@@ -119,6 +119,7 @@ section{
     margin-right:0px;
     text-shadow:0 0 5px var(--gold-glow);
     width:500;
+    font-size: x-large;
 }
 
 .nav-links{
